@@ -47,7 +47,7 @@ void MainWindow::on_TimeOut()  //定时广播
     y=-((Pos_Knob.y()-125)/115*50);
     z=-(ui->controlSlider->value());
     QString control_code = "vx:"+formatSignedInt(y,2)+"vy:"+formatSignedInt(x,2)+"vw:"+formatSignedInt(z,3);
-    //qDebug() <<"控制码： " << control_code;
+    qDebug() <<"控制码： " << control_code;
     udpSocket->writeDatagram(control_code.toUtf8(), QHostAddress(targetIP), targetPort);
 }
 
@@ -58,11 +58,11 @@ void MainWindow::processDatagrams() {
         quint16 port;
         datagram.resize(int(udpSocket->pendingDatagramSize()));
         udpSocket->readDatagram(datagram.data(), datagram.size(),&addr,&port);
-        //qDebug()<<QString::number(port);
+        qDebug()<<QString::number(port);
         if(port==50000)
         {
             QString dat = QString::fromUtf8(datagram);
-            //qDebug()<<"dat:"<<dat;
+            qDebug()<<"dat:"<<dat;
             QString wsd[2];
             wsd[0]=dat.mid(0,4);
             wsd[1]=dat.mid(4);
