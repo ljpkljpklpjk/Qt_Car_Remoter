@@ -17,9 +17,9 @@
    <widget class="QLabel" name="imageLabel">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>9</y>
-      <width>381</width>
+      <x>30</x>
+      <y>12</y>
+      <width>320</width>
       <height>240</height>
      </rect>
     </property>
@@ -27,6 +27,12 @@
      <size>
       <width>320</width>
       <height>240</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>640</width>
+      <height>480</height>
      </size>
     </property>
     <property name="text">
@@ -128,7 +134,7 @@
       <x>70</x>
       <y>310</y>
       <width>252</width>
-      <height>273</height>
+      <height>280</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
